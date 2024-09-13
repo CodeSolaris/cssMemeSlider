@@ -16,7 +16,8 @@
     --font-size-header: clamp(1.3rem, 0.114rem + 3.295vw, 2.75rem);
     --font-size-control: clamp(1.3rem, 0.8rem + 1.6vw, 2rem);
     --container-padding: clamp(1rem, 0.286rem + 2.286vw, 2rem);
-    --container-size: clamp(33.75em, -0.865em + 96.154vw, 71.25em) --transition-time: 0.3s;
+    --container-size: clamp(33.75em, -0.865em + 96.154vw, 71.25em);
+    --transition-time: 0.3s;
     --slider-width: clamp(18.875rem, 6.83rem + 60.227vw, 52rem);
     --slide-width: clamp(16.875rem, 4.83rem + 60.227vw, 50rem);
     --header-margin-top: clamp(2rem, -0.143rem + 10.714vw, 5rem);
