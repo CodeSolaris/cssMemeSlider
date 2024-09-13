@@ -10,12 +10,17 @@
     --border-width: clamp(0.125rem, 0.036rem + 0.286vw, 0.25rem);
     --border-style: 4px double;
     --border-radius: 10px;
-    --control-size: clamp(1.3rem, 0.943rem + 1.143vw, 1.8rem);
+    --control-size: clamp(1.2rem, 0.982rem + 1.091vw, 1.8rem);
     --label-size: clamp(2.188rem, 1.518rem + 2.143vw, 3.125rem);
     --header-padding: 1em 2.5em;
     --font-size-header: clamp(1.3rem, 0.114rem + 3.295vw, 2.75rem);
     --font-size-control: clamp(1.3rem, 0.8rem + 1.6vw, 2rem);
-    --transition-time: 0.3s;
+    --container-padding: clamp(1rem, 0.286rem + 2.286vw, 2rem);
+    --container-size: clamp(33.75em, -0.865em + 96.154vw, 71.25em) --transition-time: 0.3s;
+    --slider-width: clamp(18.875rem, 6.83rem + 60.227vw, 52rem);
+    --slide-width: clamp(16.875rem, 4.83rem + 60.227vw, 50rem);
+    --header-margin-top: clamp(2rem, -0.143rem + 10.714vw, 5rem);
+    --header-margin-bottom: clamp(3rem, 2.286rem + 3.571vw, 4rem);
 }
 
 * {
@@ -56,14 +61,15 @@ input[type="radio"] {
 }
 
 .container {
-    max-width: clamp(33.75em, -0.865em + 96.154vw, 71.25em);
-    padding-inline: clamp(1rem, 0.286rem + 2.286vw, 2rem);
+    max-width: var(--container-size);
+    padding-inline: var(--container-padding);
     margin-inline: auto;
 }
 
 @media screen and (max-width: 576px) {
     .container {
         max-width: 100%;
+        padding-inline: .6rem;
     }
 }
 
@@ -73,8 +79,8 @@ input[type="radio"] {
     border: var(--text-color) var(--border-style);
     border-radius: var(--border-radius);
     margin-inline: auto;
-    margin-top: 5em;
-    margin-bottom: 4em;
+    margin-top: var(--header-margin-top);
+    margin-bottom: var(--header-margin-bottom);
 }
 
 .header__title {
@@ -83,9 +89,10 @@ input[type="radio"] {
 
 .slider {
     background-color: var(--slider-color);
-    width: clamp(27em, 9.143em + 57.143vw, 52em);
+    width: var(--slider-width);
     border-radius: var(--border-radius);
     border: var(--text-color) var(--border-style);
+    padding-top: 1em;
     overflow: hidden;
 }
 
@@ -101,7 +108,7 @@ input[type="radio"] {
 }
 
 .slide {
-    width: clamp(25em, 7.143em + 57.143vw, 50em);
+    width: var(--slide-width);
     display: block;
     margin-inline: auto;
 }
