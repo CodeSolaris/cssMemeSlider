@@ -31,8 +31,7 @@ body {
 }
 
 main {
-    flex:
-        1 1 auto;
+    flex: 1 1 auto;
 }
 
 body {
@@ -48,9 +47,15 @@ input[type="radio"] {
 }
 
 .container {
-    max-width: 80em;
-    padding-inline: 2.5em;
+    max-width: clamp(33.75em, -0.865em + 96.154vw, 71.25em);
+    padding-inline: clamp(1rem, 0.286rem + 2.286vw, 2rem);
     margin-inline: auto;
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        max-width: 100%;
+    }
 }
 
 .header__wrapper {
@@ -63,11 +68,14 @@ input[type="radio"] {
     margin-bottom: 4em;
 }
 
+.header__title {
+    font-size: clamp(1.3rem, 0.114rem + 3.295vw, 2.75rem);
+}
 
 
 .slider {
     background-color: var(--slder-color);
-    width: 52em;
+    width: clamp(27em, 9.143em + 57.143vw, 52em);
     border-radius: 10px;
     border: var(--text-color) 4px double;
     overflow: hidden;
@@ -76,7 +84,6 @@ input[type="radio"] {
 .slider__inner {
     width: 100%;
     margin-inline: auto;
-    margin-bottom: 2em;
     transition: transform 0.2s ease;
 }
 
@@ -87,39 +94,44 @@ input[type="radio"] {
 }
 
 .slide {
-    width: 50em;
+    width: clamp(25em, 7.143em + 57.143vw, 50em);
     display: block;
     margin-inline: auto;
 }
 
 .control-info {
     height: 100%;
+    font-size: clamp(1.3rem, 0.8rem + 1.6vw, 2rem);
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    padding-top: 1em;
+    align-items: center;
+    height: fit-content;
+    padding: 1em 0;
 }
+
+
 
 .controls {
     width: 40%;
     display: flex;
     justify-content: flex-end;
     margin-right: 1em;
-    margin-bottom: 2em;
+    padding: .5em 0;
 }
 
 .radio-button {
-    width: 1.5em;
-    height: 1.5em;
+    width: clamp(1.3rem, 0.943rem + 1.143vw, 1.8rem);
+    height: clamp(1.3rem, 0.943rem + 1.143vw, 1.8rem);
     background-color: var(--radio-button-color);
     cursor: pointer;
     border-radius: 50%;
-    transition: all 0.3s ease;
+    transition: all 0.35s ease;
 }
 
 .control-info label {
-    width: 3em;
-    height: 3em;
+    width: clamp(2.188rem, 1.518rem + 2.143vw, 3.125rem);
+    height: clamp(2.188rem, 1.518rem + 2.143vw, 3.125rem);
 
     display: flex;
     align-items: center;
@@ -134,10 +146,10 @@ input[type="radio"] {
 
 
 .description {
-    font-size: 1.5rem;
-    height: 3em;
-    width: 40%;
-    margin-inline: 1em 0;
+
+    width: 55%;
+    margin-inline: 1rem 0;
+    padding: .5em 0;
     overflow: hidden;
 }
 
@@ -154,6 +166,21 @@ input[type="radio"] {
     width: 100%;
 }
 
+@media screen and (max-width: 767.98px) {
+    .control-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .description,
+    .controls {
+        width: 100%;
+    }
+
+    .controls {
+        justify-content: center;
+    }
+}
 
 #slide-1:checked~.slider .control-info .description .description__inner {
     margin-left: 0;
@@ -208,7 +235,7 @@ input[type="radio"] {
 }
 
 #slide-1:checked~.slider .control-info .controls label:nth-child(1) .radio-button {
-    border: var(--radio-button-color) 4px solid;
+    border: var(--radio-button-color) clamp(0.125rem, 0.036rem + 0.286vw, 0.25rem) solid;
     background-color: transparent
 }
 
@@ -217,7 +244,7 @@ input[type="radio"] {
 }
 
 #slide-2:checked~.slider .control-info .controls label:nth-child(2) .radio-button {
-    border: var(--radio-button-color) 4px solid;
+    border: var(--radio-button-color) clamp(0.125rem, 0.036rem + 0.286vw, 0.25rem) solid;
     background-color: transparent
 }
 
@@ -226,7 +253,7 @@ input[type="radio"] {
 }
 
 #slide-3:checked~.slider .control-info .controls label:nth-child(3) .radio-button {
-    border: var(--radio-button-color) 4px solid;
+    border: var(--radio-button-color) clamp(0.125rem, 0.036rem + 0.286vw, 0.25rem) solid;
     background-color: transparent
 }
 
@@ -236,7 +263,7 @@ input[type="radio"] {
 
 
 #slide-4:checked~.slider .control-info .controls label:nth-child(4) .radio-button {
-    border: var(--radio-button-color) 4px solid;
+    border: var(--radio-button-color) clamp(0.125rem, 0.036rem + 0.286vw, 0.25rem) solid;
     background-color: transparent
 }
 
@@ -245,7 +272,7 @@ input[type="radio"] {
 }
 
 #slide-5:checked~.slider .control-info .controls label:nth-child(5) .radio-button {
-    border: var(--radio-button-color) 4px solid;
+    border: var(--radio-button-color) clamp(0.125rem, 0.036rem + 0.286vw, 0.25rem) solid;
     background-color: transparent
 }
 
@@ -254,7 +281,7 @@ input[type="radio"] {
 }
 
 #slide-6:checked~.slider .control-info .controls label:nth-child(6) .radio-button {
-    border: var(--radio-button-color) 4px solid;
+    border: var(--radio-button-color) clamp(0.125rem, 0.036rem + 0.286vw, 0.25rem) solid;
     background-color: transparent
 }
 
