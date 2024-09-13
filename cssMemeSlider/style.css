@@ -17,6 +17,9 @@ body {
     --main-color: linear-gradient(to right, #1d1420, #2e2935);
     --slder-color: #0b0516;
     --text-color: aliceblue;
+    --radio-button-color: #7274fa;
+    --radio-button-border-color: ivory;
+    --radio-button-color-hover: lavender;
 }
 
 .wrapper {
@@ -98,21 +101,37 @@ input[type="radio"] {
 }
 
 .controls {
-    width: 30%;
+    width: 40%;
     display: flex;
     justify-content: flex-end;
     margin-right: 1em;
     margin-bottom: 2em;
-    gap: .5em;
+}
+
+.radio-button {
+    width: 1.5em;
+    height: 1.5em;
+    background-color: var(--radio-button-color);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease;
 }
 
 .control-info label {
-    width: 1.5em;
-    height: 1.5em;
-    border: 1px solid #fff;
+    width: 3em;
+    height: 3em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    border-radius: 50%;
 }
+
+.control-info label:hover .radio-button {
+    background-color: var(--radio-button-color-hover);
+
+}
+
 
 .description {
     font-size: 1.5rem;
@@ -186,4 +205,59 @@ input[type="radio"] {
 
 #slide-6:checked~.slider .slider__inner {
     transform: translateX(-500%);
+}
+
+#slide-1:checked~.slider .control-info .controls label:nth-child(1) .radio-button {
+    border: var(--radio-button-color) 4px solid;
+    background-color: transparent
+}
+
+#slide-1:checked~.slider .control-info .controls label:nth-child(1):hover .radio-button {
+    border-color: var(--radio-button-color-hover);
+}
+
+#slide-2:checked~.slider .control-info .controls label:nth-child(2) .radio-button {
+    border: var(--radio-button-color) 4px solid;
+    background-color: transparent
+}
+
+#slide-2:checked~.slider .control-info .controls label:nth-child(2):hover .radio-button {
+    border-color: var(--radio-button-color-hover);
+}
+
+#slide-3:checked~.slider .control-info .controls label:nth-child(3) .radio-button {
+    border: var(--radio-button-color) 4px solid;
+    background-color: transparent
+}
+
+#slide-3:checked~.slider .control-info .controls label:nth-child(3):hover .radio-button {
+    border-color: var(--radio-button-color-hover);
+}
+
+
+#slide-4:checked~.slider .control-info .controls label:nth-child(4) .radio-button {
+    border: var(--radio-button-color) 4px solid;
+    background-color: transparent
+}
+
+#slide-4:checked~.slider .control-info .controls label:nth-child(4):hover .radio-button {
+    border-color: var(--radio-button-color-hover);
+}
+
+#slide-5:checked~.slider .control-info .controls label:nth-child(5) .radio-button {
+    border: var(--radio-button-color) 4px solid;
+    background-color: transparent
+}
+
+#slide-5:checked~.slider .control-info .controls label:nth-child(5):hover .radio-button {
+    border-color: var(--radio-button-color-hover);
+}
+
+#slide-6:checked~.slider .control-info .controls label:nth-child(6) .radio-button {
+    border: var(--radio-button-color) 4px solid;
+    background-color: transparent
+}
+
+#slide-6:checked~.slider .control-info .controls label:nth-child(6):hover .radio-button {
+    border-color: var(--radio-button-color-hover);
 }
