@@ -8,8 +8,8 @@
     --radio-button-border-color: ivory;
     --radio-button-color-hover: lavender;
     --border-width: clamp(0.125rem, 0.036rem + 0.286vw, 0.25rem);
-    --border-style: 4px double;
-    --border-radius: 10px;
+    --border-style: .25rem double;
+    --border-radius: .625rem;
     --control-size: clamp(1.2rem, 0.982rem + 1.091vw, 1.8rem);
     --label-size: clamp(2.188rem, 1.518rem + 2.143vw, 3.125rem);
     --header-padding: 1em 2.5em;
