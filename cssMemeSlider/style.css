@@ -1,0 +1,261 @@
+@import url(https://fonts.googleapis.com/css?family=Caveat:regular,500,600,700);
+
+:root {
+    --main-color: linear-gradient(to right, #1d1420, #2e2935);
+    --slider-color: #0b0516;
+    --text-color: aliceblue;
+    --radio-button-color: #7274fa;
+    --radio-button-border-color: ivory;
+    --radio-button-color-hover: lavender;
+    --border-width: clamp(0.125rem, 0.036rem + 0.286vw, 0.25rem);
+    --border-style: .25rem double;
+    --border-radius: .625rem;
+    --control-size: clamp(1.2rem, 0.982rem + 1.091vw, 1.8rem);
+    --label-size: clamp(2.188rem, 1.518rem + 2.143vw, 3.125rem);
+    --header-padding: 1em 2.5em;
+    --font-size-header: clamp(1.3rem, 0.114rem + 3.295vw, 2.75rem);
+    --font-size-control: clamp(1.3rem, 0.8rem + 1.6vw, 2rem);
+    --container-padding: clamp(1rem, 0.286rem + 2.286vw, 2rem);
+    --container-size: clamp(33.75em, -0.865em + 96.154vw, 71.25em);
+    --transition-time: 0.3s;
+    --slider-width: clamp(18.875rem, 6.83rem + 60.227vw, 52rem);
+    --slide-width: clamp(16.875rem, 4.83rem + 60.227vw, 50rem);
+    --header-margin-top: clamp(2rem, -0.143rem + 10.714vw, 5rem);
+    --header-margin-bottom: clamp(3rem, 2.286rem + 3.571vw, 4rem);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    color: var(--text-color);
+}
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    background: var(--main-color);
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+main {
+    flex: 1 1 auto;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.container {
+    max-width: var(--container-size);
+    padding-inline: var(--container-padding);
+    margin-inline: auto;
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        max-width: 100%;
+        padding-inline: .6rem;
+    }
+}
+
+.header__wrapper {
+    width: fit-content;
+    padding: var(--header-padding);
+    border: var(--text-color) var(--border-style);
+    border-radius: var(--border-radius);
+    margin-inline: auto;
+    margin-top: var(--header-margin-top);
+    margin-bottom: var(--header-margin-bottom);
+}
+
+.header__title {
+    font-size: var(--font-size-header);
+}
+
+.slider {
+    background-color: var(--slider-color);
+    width: var(--slider-width);
+    border-radius: var(--border-radius);
+    border: var(--text-color) var(--border-style);
+    padding-top: 1em;
+    overflow: hidden;
+}
+
+.slider__inner {
+    width: 100%;
+    margin-inline: auto;
+    transition: transform var(--transition-time) ease;
+}
+
+.slider__line {
+    width: 600%;
+    display: flex;
+}
+
+.slide {
+    width: var(--slide-width);
+    display: block;
+    margin-inline: auto;
+}
+
+.control-info {
+    font-size: var(--font-size-control);
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    height: fit-content;
+    padding: 1em 0;
+}
+
+.controls {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1em;
+    padding: .5em 0;
+}
+
+.radio-button {
+    width: var(--control-size);
+    height: var(--control-size);
+    background-color: var(--radio-button-color);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.35s ease;
+}
+
+.control-info label {
+    width: var(--label-size);
+    height: var(--label-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.control-info label:hover .radio-button {
+    background-color: var(--radio-button-color-hover);
+}
+
+.description {
+    width: 55%;
+    margin-inline: 1rem 0;
+    padding: .5em 0;
+    overflow: hidden;
+}
+
+.description__inner {
+    width: 600%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1em;
+    transition: margin-left var(--transition-time) ease;
+}
+
+.description__inner span {
+    width: 100%;
+}
+
+@media screen and (max-width: 767.98px) {
+    .control-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .description,
+    .controls {
+        width: 100%;
+    }
+
+    .controls {
+        justify-content: center;
+    }
+}
+
+/* Slide transitions */
+#slide-1:checked~.slider .slider__inner {
+    transform: translateX(0);
+}
+
+#slide-2:checked~.slider .slider__inner {
+    transform: translateX(-100%);
+}
+
+#slide-3:checked~.slider .slider__inner {
+    transform: translateX(-200%);
+}
+
+#slide-4:checked~.slider .slider__inner {
+    transform: translateX(-300%);
+}
+
+#slide-5:checked~.slider .slider__inner {
+    transform: translateX(-400%);
+}
+
+#slide-6:checked~.slider .slider__inner {
+    transform: translateX(-500%);
+}
+
+/* Description transitions */
+#slide-1:checked~.slider .control-info .description .description__inner {
+    margin-left: 0;
+}
+
+#slide-2:checked~.slider .control-info .description .description__inner {
+    margin-left: -100%;
+}
+
+#slide-3:checked~.slider .control-info .description .description__inner {
+    margin-left: -200%;
+}
+
+#slide-4:checked~.slider .control-info .description .description__inner {
+    margin-left: -300%;
+}
+
+#slide-5:checked~.slider .control-info .description .description__inner {
+    margin-left: -400%;
+}
+
+#slide-6:checked~.slider .control-info .description .description__inner {
+    margin-left: -500%;
+}
+
+/* Radio button active states */
+#slide-1:checked~.slider .control-info .controls label:nth-child(1) .radio-button,
+#slide-2:checked~.slider .control-info .controls label:nth-child(2) .radio-button,
+#slide-3:checked~.slider .control-info .controls label:nth-child(3) .radio-button,
+#slide-4:checked~.slider .control-info .controls label:nth-child(4) .radio-button,
+#slide-5:checked~.slider .control-info .controls label:nth-child(5) .radio-button,
+#slide-6:checked~.slider .control-info .controls label:nth-child(6) .radio-button {
+    border: var(--radio-button-color) var(--border-width) solid;
+    background-color: transparent;
+}
+
+#slide-1:checked~.slider .control-info .controls label:nth-child(1):hover .radio-button,
+#slide-2:checked~.slider .control-info .controls label:nth-child(2):hover .radio-button,
+#slide-3:checked~.slider .control-info .controls label:nth-child(3):hover .radio-button,
+#slide-4:checked~.slider .control-info .controls label:nth-child(4):hover .radio-button,
+#slide-5:checked~.slider .control-info .controls label:nth-child(5):hover .radio-button,
+#slide-6:checked~.slider .control-info .controls label:nth-child(6):hover .radio-button {
+    border-color: var(--radio-button-color-hover);
+}
